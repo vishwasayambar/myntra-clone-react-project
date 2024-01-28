@@ -1,9 +1,11 @@
 import { FaUser } from "react-icons/fa";
 import { FaFaceGrinBeam } from "react-icons/fa6";
 import { IoBagHandle } from "react-icons/io5";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+    const bagItemCount = useSelector(store => store.bag);
   return (
     <header>
         <div className="logo_container">
@@ -35,7 +37,7 @@ const Header = () => {
             <Link className="action_container" to="/bag">
             <IoBagHandle />
                 <span className="action_name">Bag</span>
-                <span className="bag-item-count">0</span>
+                <span className="bag-item-count">{bagItemCount.length}</span>
             </Link>
         </div>
     </header>
