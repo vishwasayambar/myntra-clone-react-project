@@ -305,6 +305,16 @@ header {
   border-radius: 10px;
   cursor: pointer;
 }
+.btn-remove-bag {
+  margin-top: 8px;
+  font-size: 18px;
+  width: 100%;
+  background-color: rgb(230, 10, 10);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .bag-item-count {
   background-color: #f16565;
   white-space: nowrap;
@@ -463,4 +473,13 @@ a.action_container:link {
   width: 14px;
   height: 14px;
   cursor: pointer;
+}
+
+.spinner-grow{
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+.nav_bar a {
+  border-bottom: none;
 }
