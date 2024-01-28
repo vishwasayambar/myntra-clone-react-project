@@ -1,5 +1,10 @@
+import { useSelector } from "react-redux";
+import AddRemoveFromBagButton from "./AddRemoveFromBagButton";
+
 const HomeItem = ({ item }) => {
-  console.log("!!!!!!!",item);
+  const bag = useSelector((store) => store.bag);
+  const isInBag = bag.includes(item.id);
+
   return (
     <div className="item-container">
       <img className="item-image" src={item.image} alt="item image" />
@@ -13,12 +18,7 @@ const HomeItem = ({ item }) => {
         <span className="original-price">Rs {item.original_price}</span>
         <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button
-        className="btn-add-bag"
-        onClick={() => console.log("Add To Bag was Clicked")}
-      >
-        Add to Bag
-      </button>
+      {isInBag ? <AddRemoveFromBagButton type={'REMOVE'} item={item}/> : <AddRemoveFromBagButton type={'ADD'} item={item}/>}
     </div>
   );
 };
